@@ -1,43 +1,7 @@
 Let's get [[Started!]](Start)
 
-[[Start]]:
-    squiffy.set("startTime", new Date().getTime());
-    setTimeout(function() { squiffy.story.passage("Sleep1"); }, 5000);
-@clear
-{buzz}
+@import plot/*.squiffy
 
-[Sleep1]:
-[...?](Sleep2)
-
-[Sleep2]:
-    setTimeout(function() { squiffy.story.passage("Sleep3"); }, 5000);
-@clear
-{buzz}
-
-[Sleep3]:
-@clear
-{buzz}
-[It's morning?](Sleep4)
-
-[Sleep4]:
-[Already?](Sleep5)
-
-[Sleep5]:
-[Gragh...](Sleep6)
-
-[Sleep6]:
-    var diff = new Date().getTime() - squiffy.get("startTime");
-    squiffy.set("alarmTime", diff / 1000);
-@replace buzz=[[BUZZ]](newnew)
-That alarm's been going off for at least {alarmTime} seconds.
-
-[[buzz]]:
-<div style="height: 2.5em;"><strong class="vibrate">{label:buzz=BUZZ}</strong></div>
-
-
-[[newnew]]:
-@clear
-That's better.
 
 [[new section]]:
 In addition to sections, Squiffy has the concept of passages. These are
