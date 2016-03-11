@@ -1,0 +1,67 @@
+Let's get [[Started!]](Start)
+
+[[Start]]:
+    squiffy.set("startTime", new Date().getTime());
+    setTimeout(function() { squiffy.story.passage("Sleep1"); }, 5000);
+@clear
+{buzz}
+
+[Sleep1]:
+[...?](Sleep2)
+
+[Sleep2]:
+    setTimeout(function() { squiffy.story.passage("Sleep3"); }, 5000);
+@clear
+{buzz}
+
+[Sleep3]:
+@clear
+{buzz}
+[It's morning?](Sleep4)
+
+[Sleep4]:
+[Already?](Sleep5)
+
+[Sleep5]:
+[Gragh...](Sleep6)
+
+[Sleep6]:
+    var diff = new Date().getTime() - squiffy.get("startTime");
+    squiffy.set("alarmTime", diff / 1000);
+@replace buzz=[[BUZZ]](newnew)
+That alarm's been going off for at least {alarmTime} seconds.
+
+[[buzz]]:
+<div style="height: 2.5em;"><strong class="vibrate">{label:buzz=BUZZ}</strong></div>
+
+
+[[newnew]]:
+@clear
+That's better.
+
+[[new section]]:
+In addition to sections, Squiffy has the concept of passages. These are
+sections of text that don't advance the story. For example, you can click this
+[passage link], and this [other passage link], but the story won't advance
+until you click this [[section link]]. *bold* 
+
+MMM **bold** @clear more here
+> **bold** 
+DDD
+
+[passage link]:
+
+This is the text for the first passage link.
+
+[other passage link]:
+@clear
+
+This is the text for the second passage link.
+
+[[section link]]:
+    var x = "234";
+    var y = x + 3;
+    alert(y);
+
+When a new section appears, any unclicked passage links from the previous
+section are disabled.
