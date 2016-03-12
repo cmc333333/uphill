@@ -26,15 +26,18 @@
 [Sleep6]:
     var diff = new Date().getTime() - squiffy.get("startTime");
     squiffy.set("alarmTime", diff / 1000);
-@replace buzz=[[BUZZ]](newnew)
+@replace buzz=[BUZZ](End)
 That alarm's been going off for at least {alarmTime} seconds.
+
+[End]:
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
+                "Friday", "Saturday", "Sunday"];
+    squiffy.set("today", days[new Date().getDay()]);
+@clear
+That's better. It's.... {today}? I have to:
+
+{MainMenu}
+
 
 [[buzz]]:
 <div style="height: 2.5em;"><strong class="vibrate">{label:buzz=BUZZ}</strong></div>
-
-
-[[newnew]]:
-@clear
-That's better.
-
-
