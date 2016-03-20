@@ -1,18 +1,32 @@
 [[Shower]]:
 @clear
-
+Let's do this.
 <div class="shower-controls">
-  <span class="hot">[Hot](Start Shower)</span>
-  <span class="cold">[Cold](Start Shower)</span>
+  <span class="hot">[Hot]</span>
+  <span class="cold">[Cold]</span>
 </div>
 
-[Start Shower]:
-    squiffy.utils.delayed(1000, "Shower Image");
+[Hot]:
+    squiffy.utils.delayed(2000, "Hot2");
 
-[Shower Image]:
+[Hot2]:
+Hrm. Looks like the hot water is broken...
+
+I'll have to call the super.
+
+[Cold]:
+    squiffy.utils.delayed(1000, "Cold2");
+
+[Cold2]:
     $('div.background').css("background-image", "url(/img/shower.gif)");
-    squiffy.utils.delayed(5000, "Done");
+    squiffy.utils.delayed(5000, "Clog");
 
-[Done]:
-    $('div.background').css("background-image", "none");
-ALL DONE!
+Eeep!
+
+[Clog]:
+    var container = $('div.background');
+    container.css('background-image', 'none');
+    container.append('<div class="rising-water" />');
+And it would appear that the drain is clogged. At least I'm clean. ish.
+
+[[Do something else]](MainMenu)

@@ -1,4 +1,9 @@
 [[MainMenu]]:
+@clear
 
 {if not seen Shower:
 * [[Take a Shower]](Shower)}
+{if seen Hot2:
+* Call super about hot water}
+{if seen Clog:
+* Try to plunge out shower}

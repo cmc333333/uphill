@@ -48,6 +48,15 @@ html, body {
   50% { margin: 2px -5px 5px -1px; }
 }
 
+.shower-controls {
+  text-align: center;
+}
+
+.shower-controls .hot, .shower-controls .cold {
+  padding: 0 2em;
+}
+
+
 .shower-controls .link-passage.disabled {
   animation-duration: 1.5s;
   animation-iteration-count: 2;
@@ -68,4 +77,19 @@ html, body {
 }
 @keyframes counter-clockwise {
   100% { transform: rotate(-360deg); }
+}
+
+.rising-water {
+  background-color: lightblue;
+  animation-name: rising-water;
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+@keyframes rising-water {
+  from { height: 0%; }
+  to { height: 50%; }
 }
