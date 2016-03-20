@@ -1,0 +1,12 @@
+[[Shower]]:
+@clear
+
+<div class="shower-controls">
+  [Hot] [Cold]
+</div>
+
+[Hot]:
+Hot!
+
+[Cold]:
+Cold!

@@ -32,3 +32,25 @@
   48% { margin: -5px 5px 5px 2px; }
   50% { margin: 2px -5px 5px -1px; }
 }
+
+.shower-controls .link-passage.disabled {
+  animation-duration: 1.5s;
+  animation-iteration-count: 2;
+  animation-timing-function: linear;
+  display: inline-block;
+}
+
+.shower-controls .link-passage.disabled[data-passage=Hot] {
+  animation-name: counter-clockwise;
+}
+
+.shower-controls .link-passage.disabled[data-passage=Cold] {
+  animation-name: clockwise;
+}
+
+@keyframes clockwise {
+  100% { transform: rotate(360deg); }
+}
+@keyframes counter-clockwise {
+  100% { transform: rotate(-360deg); }
+}

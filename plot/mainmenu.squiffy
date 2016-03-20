@@ -1,3 +1,4 @@
 [[MainMenu]]:
 
-Content of main menu
+{if not seen Shower:
+* [[Take a Shower]](Shower)}
