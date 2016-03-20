@@ -1,3 +1,18 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -10;
+  opacity: 0.6;
+  background-size: 100%;
+}
+
 .vibrate {
   animation-duration: 2s;
   animation-name: vibrate;
@@ -40,11 +55,11 @@
   display: inline-block;
 }
 
-.shower-controls .link-passage.disabled[data-passage=Hot] {
+.shower-controls .hot .disabled {
   animation-name: counter-clockwise;
 }
 
-.shower-controls .link-passage.disabled[data-passage=Cold] {
+.shower-controls .cold .disabled {
   animation-name: clockwise;
 }
 
