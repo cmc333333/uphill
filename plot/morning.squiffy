@@ -1,6 +1,6 @@
 [[Start]]:
     squiffy.set("startTime", new Date().getTime());
-    setTimeout(function() { squiffy.story.passage("Sleep1"); }, 5000);
+    squiffy.utils.delayed(5000, "Sleep1");
 @clear
 {buzz}
 
@@ -8,7 +8,7 @@
 [...?](Sleep2)
 
 [Sleep2]:
-    setTimeout(function() { squiffy.story.passage("Sleep3"); }, 5000);
+    squiffy.utils.delayed(5000, "Sleep3");
 @clear
 {buzz}
 
