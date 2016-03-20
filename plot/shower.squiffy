@@ -2,11 +2,17 @@
 @clear
 
 <div class="shower-controls">
-  [Hot] [Cold]
+  <span class="hot">[Hot](Start Shower)</span>
+  <span class="cold">[Cold](Start Shower)</span>
 </div>
 
-[Hot]:
-Hot!
+[Start Shower]:
+    squiffy.utils.delayed(1000, "Shower Image");
 
-[Cold]:
-Cold!
+[Shower Image]:
+    $('div.background').css("background-image", "url(/img/shower.gif)");
+    squiffy.utils.delayed(5000, "Done");
+
+[Done]:
+    $('div.background').css("background-image", "none");
+ALL DONE!
