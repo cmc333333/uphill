@@ -1,0 +1,29 @@
+[[Call Super]]:
+    squiffy.utils.delayed(1000, "Option 2");
+@clear
+> Thank you for calling Sisyphus Realty Management&copy;.
+> To schedule an appointment to view one of our properties,
+>
+> &nbsp;
+>
+> [[Press]](Press 1) or [Say](@replace response=Say) 1
+
+[Option 2]:
+> For existing tenants, please
+> 
+> &nbsp;
+> 
+> [[Press]](Press 2) or [Say](@replace response=Say) 2
+>
+> &nbsp;
+>
+> {label:response=&nbsp;}
+
+[Say]:
+I'm sorry. I couldn't understand that.
+
+[[Press 1]]:
+> Pressed 1
+
+[[Press 2]]:
+> Pressed 2

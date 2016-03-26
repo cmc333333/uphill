@@ -4,6 +4,6 @@
 {if not seen Shower:
 * [[Take a Shower]](Shower)}
 {if seen Hot2:
-* Call super about hot water}
+* [[Call super about hot water]](Call Super)}
 {if seen Clog:
 * Try to plunge out shower}

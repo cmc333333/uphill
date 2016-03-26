@@ -93,3 +93,13 @@ html, body {
   from { height: 0%; }
   to { height: 50%; }
 }
+
+blockquote {
+  background-color: lightgrey;
+  padding: 0.5em 1em;
+  font-family: Monospace;
+  margin: 0 1em;
+}
+blockquote p {
+  margin: 0.5em;
+}
