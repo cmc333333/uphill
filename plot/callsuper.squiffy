@@ -6,24 +6,144 @@
 >
 > &nbsp;
 >
-> [[Press]](Press 1) or [Say](@replace response=Say) 1
+> [[Press]](Press 1) or [Say](@replace response=Say) one
 
 [Option 2]:
 > For existing tenants, please
 > 
 > &nbsp;
 > 
-> [[Press]](Press 2) or [Say](@replace response=Say) 2
+> [[Press]](Call Spanish) or [Say](@replace response=Say) two
 >
 > &nbsp;
 >
-> {label:response=&nbsp;}
+> {label:response= }
+
+[[Hang up?]](MainMenu)
 
 [Say]:
 I'm sorry. I couldn't understand that.
 
 [[Press 1]]:
-> Pressed 1
+@clear
+> Hello! What type of property are you interested in viewing?
 
-[[Press 2]]:
-> Pressed 2
+* [Sorry, I'm already renting -- my hot water is ...](Sorry)
+* {label:quiet=[Something in a quiet neighborhood](Quiet)}
+* {label:downtown=[Something downtown](Downtown)}
+
+[Sorry]:
+> You've reached the wrong number.
+>
+> &lt;Call Ended&gt;
+
+Let's do [[something else]](MainMenu)
+
+[Quiet]:
+@replace downtown=[And what about something downtown](Downtown)
+> We have a beautiful property in lower Stepford. The area is wealthy and
+> homogeneous, so there is no violence outside of the rows during neighborhood
+> association meetings. Generally, they do not allow renters, but they're
+> willing to make an exception for the right person. You can prove your
+> ancestry, right?
+
+* [My what?](Not High Class)
+
+[Not High Class]:
+> I see. This probably isn't the property for you, then.
+
+[Downtown]:
+@replace quiet=[What about somewhere quiet](Quiet)
+Down town
+
+[[Call Spanish]]:
+    squiffy.utils.delayed(1000, "Option 2");
+@clear
+> Gracias por llamar Sisyphus Realty Management&copy;.
+> Para programar una cita para ver una de nuestras propiedades,
+>
+> &nbsp;
+>
+> [[Presione]](Press 1) o [Decir](@replace response=Say) uno.
+
+[Option 2]:
+> Para los inquilinos existentes, por favor
+>
+> &nbsp;
+>
+> [[Presione]](Call German) o [Decir](@replace response=Say) dos.
+>
+> &nbsp;
+>
+> {label:response= }
+
+[[Hang up?]](MainMenu)
+
+[Say]:
+Lo siento, yo no podía entender eso.
+
+[[Call German]]:
+    squiffy.utils.delayed(1000, "Option 2");
+@clear
+> Vielen Dank für Sisyphus Realty Management&copy; aufrufen.
+> Um einen Termin zu vereinbaren eine unserer Eigenschaften,
+>
+> &nbsp;
+>
+> [[Drücken]](Press 1) Sie zum Anzeigen oder man
+> [Sagen](@replace response=Say).
+
+[Option 2]:
+> Für bestehende Mieter
+>
+> &nbsp;
+> 
+> [[Drücken]](Call Japanese) Sie bitte oder
+> [Sagen](@replace response=Say) zwei.
+>
+> &nbsp;
+>
+> {label:response= }
+
+[[Hang up?]](MainMenu)
+
+[Say]:
+Es tut mir leid, ich konnte sie nicht verstehen.
+
+[[Call Japanese]]:
+    squiffy.utils.delayed(1000, "Option 2");
+@clear
+> Sisyphus Realty Management&copy;を呼び出すいただきありがとうございます。
+> 私たちの特性、[[プレス]](Press 1)の表示または1を
+> [言うために](@replace response=Say)アポイントをスケジュールするには。
+
+[Option 2]:
+> 既存のテナントについては、[[押す]](Call Kannada)か2を
+> [おっしゃっ](@replace response=Say)てください。
+>
+> &nbsp;
+>
+> {label:response= }
+
+[Say]:
+私は申し訳ありませんが、私はそれを理解できませんでした。
+
+[[Call Kannada]]:
+    squiffy.utils.delayed(1000, "Option 2");
+@clear
+> Sisyphus Realty Management&copy; ಕರೆ ಧನ್ಯವಾದಗಳು.
+> ನಮ್ಮ ಗುಣಗಳು, [[ಪತ್ರಿಕಾ]](Press 1) ವೀಕ್ಷಿಸಲು ಅಥವಾ ಒಂದು 
+> [ಹೇಳಲು](@replace response=Say) ಅಪಾಯಿಂಟ್ಮೆಂಟ್ ಕಾರ್ಯಯೋಜನೆ.
+
+[Option 2]:
+> ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ಬಾಡಿಗೆದಾರರು, ದಯವಿಟ್ಟು [[ಒತ್ತಿ ಅಥವಾ]](Call Super)
+> [ಎರಡು](@replace response=Say).
+>
+> &nbsp;
+>
+> {label:response= }
+
+[[Hang up?]](MainMenu)
+
+[Say]:
+ಕ್ಷಮಿಸಿ, ನಾನು ಅರ್ಥವಾಗಿಲ್ಲ.
