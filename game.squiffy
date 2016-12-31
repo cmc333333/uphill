@@ -1,3 +1,5 @@
+[[Intro]]:
+    squiffy.utils = GameUtils(squiffy);
 Let's get [[Started!]](Start)
 
 @import plot/*.squiffy
