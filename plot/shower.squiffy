@@ -12,7 +12,7 @@ Let's do this.
 [Hot2]:
 Hrm. Looks like the hot water is broken...
 
-I'll have to call the super.
+I'll have to [[call the super]](Call Super).
 
 [Cold]:
     squiffy.utils.delayed(1000, "Cold2");

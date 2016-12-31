@@ -1,5 +1,5 @@
 [[Call Super]]:
-    squiffy.utils.delayed(1000, "Option 2");
+    squiffy.utils.delayed(2000, "Option 2");
 @clear
 > Thank you for calling Sisyphus Realty Management&copy;.
 > To schedule an appointment to view one of our properties,
@@ -24,40 +24,8 @@
 [Say]:
 I'm sorry. I couldn't understand that.
 
-[[Press 1]]:
-@clear
-> Hello! What type of property are you interested in viewing?
-
-* [Sorry, I'm already renting -- my hot water is ...](Sorry)
-* {label:quiet=[Something in a quiet neighborhood](Quiet)}
-* {label:downtown=[Something downtown](Downtown)}
-
-[Sorry]:
-> You've reached the wrong number.
->
-> &lt;Call Ended&gt;
-
-Let's do [[something else]](MainMenu)
-
-[Quiet]:
-@replace downtown=[And what about something downtown](Downtown)
-> We have a beautiful property in lower Stepford. The area is wealthy and
-> homogeneous, so there is no violence outside of the rows during neighborhood
-> association meetings. Generally, they do not allow renters, but they're
-> willing to make an exception for the right person. You can prove your
-> ancestry, right?
-
-* [My what?](Not High Class)
-
-[Not High Class]:
-> I see. This probably isn't the property for you, then.
-
-[Downtown]:
-@replace quiet=[What about somewhere quiet](Quiet)
-Down town
-
 [[Call Spanish]]:
-    squiffy.utils.delayed(1000, "Option 2");
+    squiffy.utils.delayed(2000, "Option 2");
 @clear
 > Gracias por llamar Sisyphus Realty Management&copy;.
 > Para programar una cita para ver una de nuestras propiedades,
@@ -83,7 +51,7 @@ Down town
 Lo siento, yo no podía entender eso.
 
 [[Call German]]:
-    squiffy.utils.delayed(1000, "Option 2");
+    squiffy.utils.delayed(2000, "Option 2");
 @clear
 > Vielen Dank für Sisyphus Realty Management&copy; aufrufen.
 > Um einen Termin zu vereinbaren eine unserer Eigenschaften,
@@ -111,7 +79,7 @@ Lo siento, yo no podía entender eso.
 Es tut mir leid, ich konnte sie nicht verstehen.
 
 [[Call Japanese]]:
-    squiffy.utils.delayed(1000, "Option 2");
+    squiffy.utils.delayed(2000, "Option 2");
 @clear
 > Sisyphus Realty Management&copy;を呼び出すいただきありがとうございます。
 > 私たちの特性、[[プレス]](Press 1)の表示または1を
@@ -125,11 +93,13 @@ Es tut mir leid, ich konnte sie nicht verstehen.
 >
 > {label:response= }
 
+[[Hang up?]](MainMenu)
+
 [Say]:
 私は申し訳ありませんが、私はそれを理解できませんでした。
 
 [[Call Kannada]]:
-    squiffy.utils.delayed(1000, "Option 2");
+    squiffy.utils.delayed(2000, "Option 2");
 @clear
 > Sisyphus Realty Management&copy; ಕರೆ ಧನ್ಯವಾದಗಳು.
 > ನಮ್ಮ ಗುಣಗಳು, [[ಪತ್ರಿಕಾ]](Press 1) ವೀಕ್ಷಿಸಲು ಅಥವಾ ಒಂದು 
@@ -147,3 +117,121 @@ Es tut mir leid, ich konnte sie nicht verstehen.
 
 [Say]:
 ಕ್ಷಮಿಸಿ, ನಾನು ಅರ್ಥವಾಗಿಲ್ಲ.
+
+[[Press 1]]:
+@clear
+> Hello! What type of property are you interested in viewing?
+
+* [[Sorry, I'm already renting -- my hot water is ...]](Sorry)
+* {label:quiet=[Something in a quiet neighborhood](Quiet)}
+* {label:downtown=[Something downtown](Downtown)}
+* {label:trendy=Somewhere trendy}
+
+[Quiet]:
+    if (!squiffy.story.seen('Downtown')) {
+      squiffy.ui.output.find('.squiffy-label-downtown a').text(
+        'How about downtown instead?');
+    }
+    if (!squiffy.story.seen('Trendy')) {
+      squiffy.ui.output.find('.squiffy-label-trendy a').text(
+        'How about somewhere trendy instead?');
+    }
+> We have a beautiful property in lower Stepford. The area is wealthy and
+> homogeneous, so there is no violence outside of the rows during neighborhood
+> association meetings. Generally, they do not allow renters, but they're
+> willing to make an exception for the right person. You can prove your
+> ancestry, right?
+
+* [My what?](Not High Class)
+
+[Not High Class]:
+> I see. This probably isn't the property for you, then.
+
+[Downtown]:
+@clear
+> Downtown is perfect. We have a recent eighth floor loft across the street
+> from the 12th Street power generator.
+
+[This sounds oddly familiar](Downtown2).
+
+[Downtown2]:
+    var $blockquote = $('blockquote');
+    $blockquote.css('background-image',
+      'url(http://nerdrepository.com/wp-content/uploads/2012/01/man-on-a-ledge-review.jpg)').css('color',
+      'transparent');
+    window.setTimeout(function() {
+      $blockquote.css('background-image', 'none').css('color', 'black');
+      squiffy.story.passage("Downtown3");
+    }, 500);
+
+[Downtown3]:
+@clear
+> Perhaps you've heard good things about the neighborhood. It's really
+> revitalizing. Bars stay open past 8p.m. now. They're planning to build a
+> grocery store. The police keep crime down.
+
+[Something about the eighth floor...](Downtown4)
+
+[Downtown4]:
+    var $blockquote = $('blockquote');
+    $blockquote.css('background-image',
+      'url(http://nerdrepository.com/wp-content/uploads/2012/01/man-on-a-ledge-review.jpg)').css('color',
+      'transparent');
+    window.setTimeout(function() {
+      $blockquote.css('background-image', 'none').css('color', 'black');
+      squiffy.story.passage("Downtown5");
+    }, 1000);
+
+[Downtown5]:
+@clear
+> This is one of the tallest buildings in the area. It has an excellent view
+> of the rivers, and is far enough away from the street that you can't hear
+> any of the cars. This particular apartment has a skylight, which lets in
+> natural light day and night. It really is wonderful. And at an amazing price
+> point, too. Other apartments in this area rent for five or six times this.
+
+[Wait, wasn't this in the news?](Downtown6)
+
+[Downtown6]:
+    var $blockquote = $('blockquote');
+    $blockquote.css('background-image',
+      'url(http://nerdrepository.com/wp-content/uploads/2012/01/man-on-a-ledge-review.jpg)').css('color',
+      'transparent');
+    window.setTimeout(function() {
+      $blockquote.css('background-image', 'none').css('color', 'black');
+      squiffy.story.passage("Downtown7");
+    }, 2000);
+
+[Downtown7]:
+@clear
+> Well...
+
+[This is _that_ apartment?](Downtown8)
+
+[Downtown8]:
+> I don't...
+
+[The one that guy jumped out of...](Downtown9)
+
+[Downtown9]:
+> That's not the whole...
+
+[...because there was a gas leak...](Downtown10)
+
+[Downtown10]:
+> It's been fixed now.
+
+[...that made him crazy?](Downtown11)
+
+[Downtown11]:
+> We're not at liberty to discuss.
+
+[[I think I'll pass]](Press 1)
+
+[[Sorry]]:
+> You've reached the wrong number.
+>
+> &lt;Call Ended&gt;
+
+Let's do [[something else]](MainMenu)
+

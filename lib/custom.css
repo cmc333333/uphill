@@ -99,6 +99,9 @@ blockquote {
   padding: 0.5em 1em;
   font-family: Monospace;
   margin: 0 1em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 blockquote p {
   margin: 0.5em;

@@ -3,6 +3,8 @@
 
 {if not seen Shower:
 * [[Take a Shower]](Shower)}
+{if seen Shower:
+* [[Try Another Shower]](Shower)}
 {if seen Hot2:
 * [[Call super about hot water]](Call Super)}
 {if seen Clog:
